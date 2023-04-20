@@ -2,9 +2,9 @@
 
 Compuesto por:
 
-- Spark master
-- 2 spark worker
-- servidor jupyter
+- Spark master, en puerto 7077
+- 2 spark worker, worker1 en puerto 8081, y worker2 en puerto 8082
+- servidor jupyter, en el puerto 8888
 
 para levantar el cluster:
 

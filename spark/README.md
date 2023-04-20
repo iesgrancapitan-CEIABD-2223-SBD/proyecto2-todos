@@ -2,7 +2,7 @@
 
 Compuesto por:
 
-- Spark master, en puerto 7077
+- Spark master, en puerto 8080 (7077 conexiones python)
 - 2 spark worker, worker1 en puerto 8081, y worker2 en puerto 8082
 - servidor jupyter, en el puerto 8888
 

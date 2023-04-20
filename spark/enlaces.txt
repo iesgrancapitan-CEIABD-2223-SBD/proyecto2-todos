@@ -1,0 +1,5 @@
+como conectar mediante jdbc y pyspark en notebook o desde terminal
+
+https://thucnc.medium.com/pyspark-in-jupyter-notebook-working-with-dataframe-jdbc-data-sources-6f3d39300bf6
+
+

@@ -3,3 +3,13 @@ como conectar mediante jdbc y pyspark en notebook o desde terminal
 https://thucnc.medium.com/pyspark-in-jupyter-notebook-working-with-dataframe-jdbc-data-sources-6f3d39300bf6
 
 
+como poder parelizar en spark conexiones jbdc en workers
+
+https://medium.com/mercedes-benz-techinnovation-blog/increasing-apache-spark-read-performance-for-jdbc-connections-a028115e20cd
+
+
+como usar la paralelización para extraer datos de una base de datos con pyspark.sql desde varios workers:
+
+
+https://medium.com/mercedes-benz-techinnovation-blog/increasing-apache-spark-read-performance-for-jdbc-connections-a028115e20cd
+

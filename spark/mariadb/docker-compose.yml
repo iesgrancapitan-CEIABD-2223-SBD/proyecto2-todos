@@ -1,0 +1,21 @@
+version: '3'
+
+# docker-compose up -d --build
+
+services:
+   mariadb:
+       build: /home/usuario/castorjustin/apps/mariadb
+       container_name: mariadb
+       volumes:
+               - mariadbdata:/var/lib/mysql/
+       ports:
+               - "3306:3306"
+       environment:
+              MARIADB_ROOT_PASSWORD: 'mysql'
+              MARIADB_USER: 'root'
+              MARIADB_PASSWORD: 'mysql'
+              MARIADB_DATABASE: 'castorjuan'
+volumes:
+       mariadbdata:
+         external: true
+

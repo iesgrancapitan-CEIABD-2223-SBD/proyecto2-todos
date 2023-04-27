@@ -4,7 +4,7 @@ version: '3'
 
 services:
    mariadb:
-       build: /home/usuario/castorjustin/apps/mariadb
+       build: . 
        container_name: mariadb
        volumes:
                - mariadbdata:/var/lib/mysql/

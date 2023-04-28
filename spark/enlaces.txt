@@ -14,7 +14,7 @@ https://medium.com/mercedes-benz-techinnovation-blog/increasing-apache-spark-rea
 https://medium.com/mercedes-benz-techinnovation-blog/increasing-apache-spark-read-performance-for-jdbc-connections-a028115e20cd
 
 
-- mas sobre paralelización para extraer datos usando jdbc:
+- mas sobre paralelización para extraer datos usando jdbc ( ojo el lenguaje de la web parece ser Scala )
 
 https://dzlab.github.io/spark/2022/02/10/spark-jdbc-partitioning/
 
@@ -24,6 +24,11 @@ https://dzlab.github.io/spark/2022/02/10/spark-jdbc-partitioning/
 https://www.analyticsvidhya.com/blog/2021/06/spotify-recommendation-system-using-pyspark-and-kafka-streaming/
 
 el dataset al que hace referencia en el artículo es un link roto, se puede encontrar aqui https://www.kaggle.com/datasets/mrmorj/dataset-of-songs-in-spotify
+
+
+- diversas maneras de usar los jars en pyspark
+
+https://sparkbyexamples.com/pyspark/how-to-add-multiple-jars-to-pyspark/
 
 
 

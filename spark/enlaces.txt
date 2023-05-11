@@ -31,4 +31,6 @@ el dataset al que hace referencia en el artículo es un link roto, se puede enco
 https://sparkbyexamples.com/pyspark/how-to-add-multiple-jars-to-pyspark/
 
 
+- acceso a dataframes in spark usando thriftserver
 
+https://www.adaltas.com/en/2019/03/25/spark-sql-dataframe-thrift-server/

@@ -6,8 +6,12 @@ FROM openjdk:8-jre-slim
 ## Descarga e instalación de dependencias
 # Definimos las variables del Dockerfile
 ARG hdfs_simulado=/opt/workspace
-ARG spark_version=3.1.2
-ARG jupyterlab_version=3.2.0
+#ARG spark_version=3.1.2
+#ARG jupyterlab_version=3.2.0
+
+ARG spark_version=3.4.0
+ARG jupyterlab_version=3.6.3
+
 ARG jupyterlab_web=8888 # Puerto para interfaz web de JupyterLab
 
 # Definimos la variable de entorno conteniendo el puerto de JupyterLab

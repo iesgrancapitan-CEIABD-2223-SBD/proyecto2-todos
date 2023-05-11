@@ -6,8 +6,13 @@ FROM openjdk:8-jre-slim
 ## Descarga e instalación de dependencias
 # Definimos las variables del Dockerfile
 ARG hdfs_simulado=/opt/workspace
-ARG spark_version=3.1.2
-ARG hadoop_version=3.2
+#ARG spark_version=3.1.2
+#ARG hadoop_version=3.2
+
+
+ARG spark_version=3.4.0
+ARG hadoop_version=3
+
 ARG spark_master_web=8080 # Puerto para interfaz web del nodo master
 
 # Definimos la variable de entorno conteniendo el directorio de HDFS

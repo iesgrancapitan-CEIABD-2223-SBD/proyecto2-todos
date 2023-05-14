@@ -12,6 +12,8 @@ services:
     ports:
       - 7077:7077
       - 8080:8080
+      - 10000:10000
+      - 4040:4040
     volumes:
       - hdfs-simulado:/opt/workspace
 

@@ -6,9 +6,6 @@ FROM openjdk:8-jre-slim
 ## Descarga e instalación de dependencias
 # Definimos las variables del Dockerfile
 ARG hdfs_simulado=/opt/workspace
-#ARG spark_version=3.1.2
-#ARG hadoop_version=3.2
-
 ARG spark_version=3.4.0
 ARG hadoop_version=3
 

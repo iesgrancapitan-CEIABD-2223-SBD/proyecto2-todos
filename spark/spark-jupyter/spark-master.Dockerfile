@@ -6,10 +6,6 @@ FROM openjdk:8-jre-slim
 ## Descarga e instalación de dependencias
 # Definimos las variables del Dockerfile
 ARG hdfs_simulado=/opt/workspace
-#ARG spark_version=3.1.2
-#ARG hadoop_version=3.2
-
-
 ARG spark_version=3.4.0
 ARG hadoop_version=3
 
@@ -48,6 +44,8 @@ EXPOSE ${SPARK_MASTER_PORT}
 # Exponemos el puerto utilizado para acceder a la interfaz web del master
 EXPOSE ${spark_master_web}
 
+EXPOSE 10000
+EXPOSE 4040
 
 ## Ejecución de comandos al arrancar el contenedor
 # Montamos el HDFS simulado en una carpeta con datos persistentes
@@ -58,4 +56,4 @@ CMD ["bash"]
 WORKDIR ${SPARK_HOME}
 
 # Ejecutamos Apache Spark como nodo master
-CMD bin/spark-class org.apache.spark.deploy.master.Master >> logs/spark-master.out
+CMD bin/spark-class org.apache.spark.deploy.master.Master >> logs/spark-master.out; sbin/start-thriftserver.sh --master spark://spark-master:7077

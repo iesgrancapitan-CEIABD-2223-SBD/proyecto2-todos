@@ -1,8 +1,4 @@
 # Especificamos las versiones que se utilizarán de Spark, Hadoop y JupyterLab
-#SPARK_VERSION="3.1.2"
-#HADOOP_VERSION="3.2"
-#JUPYTERLAB_VERSION="3.2.0"
-
 SPARK_VERSION="3.4.0"
 HADOOP_VERSION="3"
 JUPYTERLAB_VERSION="3.6.3"

@@ -31,6 +31,41 @@ RUN apt-get update -y && \
 RUN pip3 install wget pyspark==${spark_version} jupyterlab==${jupyterlab_version}
 
 
+# instalamos R, openjdk:8-jre-slim está basado en Debian Bullseye. Debian tiene los paquetes de R los añadimos 
+# tomamos como referencia la URLs siguiente https://github.com/saagie/jupyter-r-notebook/blob/master/Dockerfile
+
+# R install
+
+RUN apt-get install -y --no-install-recommends r-base r-base-dev && apt-get clean
+
+# Utilities for R Jupyter Kernel
+
+RUN echo 'install.packages(c("base64enc","evaluate","IRdisplay","jsonlite","uuid","digest"), \
+repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R \
+   && Rscript /tmp/packages.R
+
+RUN apt-get update && apt-get install -y --no-install-recommends libzmq3-dev git libcurl4-openssl-dev libssl-dev && apt-get clean
+
+
+# Database Libraries
+
+RUN echo 'install.packages(c("RODBC","elastic","mongolite","rmongobd","RMySQL","RPostgreSQL","RJDBC","rredis","RCassandra","RHive","RNeo4j","RImpala"),repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R && Rscript /tmp/packages.R
+
+
+# Machine Learning Libraries
+
+RUN echo 'install.packages(c("dplyr","shiny","foreach","microbenchmark","parallel","runit","arules","arulesSequences","neuralnet","RSNNS","AUC","sprint","recommenderlab","acepack","addinexamples","clv","cubature","dtw","Formula","git2r","googleVis","gridExtra","gsubfn","hash","Hmisc","ifultools","latticeExtra","locpol","longitudinalData","lubridate","miniUI","misc3d","mvtsplot","np","openssl","packrat","pdc","PKI","rsconnect","splus2R","sqldf","TaoTeProgramming","TraMineR","TSclust","withr","wmtsa"), repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R && Rscript /tmp/packages.R
+
+# Install R Jupyter Kernel
+
+RUN echo 'install.packages(c("repr", "IRdisplay", "crayon", "pbdZMQ","devtools"),repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R && Rscript /tmp/packages.R
+RUN echo 'remotes::install_github("IRkernel/IRkernel")' > /tmp/packages.R && Rscript /tmp/packages.R
+
+# Install R kernel
+
+RUN echo 'IRkernel::installspec()' > /tmp/temp.R && Rscript /tmp/temp.R
+
+
 ## Ejecución de comandos al arrancar el contenedor
 # Montamos el HDFS simulado en una carpeta con datos persistentes
 VOLUME ${hdfs_simulado}

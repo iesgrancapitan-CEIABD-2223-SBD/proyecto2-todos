@@ -42,3 +42,10 @@ el hdfs es simulado y es un volumen compartido por todos los dockers y se monta 
 - *IMPORTANTE*: el driver para mariadb NO funciona. Se tiene que usar el driver para mysql. Lo he dejado aquí en el repositorio.
 - la conexión debe hacerse como mysql, el nombre del driver sería *com.mysql.cj.jdbc.Driver*
 - os dejo un Notebook de Jupyter "jbdc_spark.ipynb" y "jbdc_spark_paralelo.ipynb", que hacen la conexión correcta, el segundo de modo paralelo entre los dos workers.. El .jar para conectar a mysql lo he puesto en el volumen compartido y despues lo he llamado con la ruta completa "/opt/workspace/"
+
+
+# JupyterLab y R
+
+- jupyter lab está construida sobre la imagen de Docker openjdk:8-jdk-slim, que es un Debian Bullseye
+- Modificamos el dockerfile para jupyter para que se añada R, nos guiamos por la URL siguiente https://github.com/saagie/jupyter-r-notebook/blob/master/Dockerfile. Que añadimos al proyecto, en la carpeta jypyter-r-notebook
+- No instalamos Java para R, ni HDFS para R. 

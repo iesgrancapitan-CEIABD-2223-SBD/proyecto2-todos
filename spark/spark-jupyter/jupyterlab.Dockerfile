@@ -40,7 +40,7 @@ RUN apt-get install -y --no-install-recommends r-base r-base-dev && apt-get clea
 
 # Utilities for R Jupyter Kernel
 
-RUN echo 'install.packages(c("base64enc","evaluate","IRdisplay","jsonlite","uuid","digest"), \
+RUN echo 'install.packages(c("base64enc","evaluate","IRdisplay","jsonlite","uuid","digest","tidyverse"), \
 repos="http://cran.us.r-project.org", dependencies=TRUE)' > /tmp/packages.R \
    && Rscript /tmp/packages.R
 
